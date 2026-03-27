@@ -14,6 +14,12 @@ The supported collateral is currently narrow by design. FxDAO states that Lumens
 
 FxDAO's pricing model is intentionally simple. Its borrowing cost is a flat 0.25% fee on collateral deposited rather than a floating utilization curve. The main risk controls are overcollateralization, redemptions, and open liquidations. If a vault falls below the minimum collateral ratio, any qualifying liquidator can repay the stablecoin debt and seize the collateral minus the protocol's 0.5% share rate. FxDAO also allows stablecoin holders to redeem against the riskiest vaults, which pressures unhealthy positions before they drift too far from solvency. As of 2026-03-27, DefiLlama reported roughly $977,183 in TVL for FxDAO on Stellar. That TVL is public and DefiLlama states its methodology is the value of XLM locked in the Vaults contract.
 
+## Validation Notes
+
+- `GET https://usestellarwavehub.vercel.app/api/projects?limit=100&search=fxdao` returned zero matching public projects on 2026-03-27, so FxDAO did not appear to be publicly submitted yet.
+- A direct authenticated submission attempt to `POST https://usestellarwavehub.vercel.app/api/projects` was made on 2026-03-27 with the metadata above, but the deployed app returned `500 Internal Server Error`.
+- `GET https://usestellarwavehub.vercel.app/api/projects/my` remained empty immediately after the failed submission attempt, which suggests the blocker is on the deployed API rather than in the request payload.
+
 ## Sources
 
 - FxDAO basics: https://fxdao.io/docs/the-basics
